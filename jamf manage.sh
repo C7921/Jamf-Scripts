@@ -19,7 +19,7 @@ if [[ $EUID -ne 0 ]]; then
 else
 osascript -e 'tell application "Terminal" to display dialog "This script requries Ethernet. Please Connect Now." buttons {"OK"} with icon stop'
 if [ $? == 0 ]; then
-    echo "Starting Jamf Manage Script"
+    echo "Testing Connection"
 
 
 # Current WiFi 
@@ -35,7 +35,7 @@ sleep 2
 # Test Ethernet or Other Connection
 if nc -zw1 google.com 443; then
   echo "we have connectivity"
-sleep 3
+sleep 5
 	jamf removeMDMProfile
 	rm -rf /var/db/ConfigurationProfiles
 	sleep 15
@@ -44,11 +44,15 @@ sleep 3
 	jamf manage
 	sleep 15
 	jamf recon
-sleep 1
+sleep 2
 echo "jamf complete"
 
-fi
+else 
+echo "No Connection Detected"
+echo "Turning WiFi back on"
+networksetup -setairportpower $CURRENT_DEVICE on
 
+fi
 
 # Turn on WiFi
 echo "Current Wi-Fi Device = '$CURRENT_DEVICE'"
