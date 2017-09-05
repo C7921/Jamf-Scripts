@@ -1,0 +1,64 @@
+#!/bin/bash
+#
+# Connor Sanders 05/09/2017
+#
+# Script Checks to see if user is root. Then Turns WiFi off, after reminding user to connect Ethernet and tests active network connection.
+# Runs Jamf Commands
+# Turns WiFi back on.
+#####################
+#
+#
+#
+#
+# Check if User is root
+if [[ $EUID -ne 0 ]]; then
+	echo "Try again as Root."
+	exit
+
+# Pop-up to Connect Ethernet	
+else
+osascript -e 'tell application "Terminal" to display dialog "This script requries Ethernet. Please Connect Now." buttons {"OK"} with icon stop'
+if [ $? == 0 ]; then
+    echo "Starting Jamf Manage Script"
+
+
+# Current WiFi 
+CURRENT_DEVICE=$(networksetup -listallhardwareports | awk '$3=="Wi-Fi" {getline; print $2}')
+
+
+# Turn off WiFi
+echo "Current Wi-Fi Device = '$CURRENT_DEVICE'"
+echo "wifi off"
+networksetup -setairportpower $CURRENT_DEVICE off
+sleep 2
+
+# Test Ethernet or Other Connection
+if nc -zw1 google.com 443; then
+  echo "we have connectivity"
+sleep 3
+	jamf removeMDMProfile
+	rm -rf /var/db/ConfigurationProfiles
+	sleep 15
+	jamf mdm
+	sleep 15
+	jamf manage
+	sleep 15
+	jamf recon
+sleep 1
+echo "jamf complete"
+
+fi
+
+
+# Turn on WiFi
+echo "Current Wi-Fi Device = '$CURRENT_DEVICE'"
+echo "wifi on"
+networksetup -setairportpower $CURRENT_DEVICE on
+
+
+
+else
+    exit 1
+
+fi
+fi
