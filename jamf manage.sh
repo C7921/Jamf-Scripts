@@ -2,7 +2,8 @@
 #
 # Connor Sanders 05/09/2017
 #
-# Script Checks to see if user is root. Then Turns WiFi off, after reminding user to connect Ethernet and tests active network connection.
+# Script Checks to see if user is root. Then Turns WiFi off, after reminding user to connect Ethernet.
+# Tests active network connection.
 # Runs Jamf Commands
 # Turns WiFi back on.
 #####################
