@@ -36,15 +36,14 @@ sleep 2
 # Test Ethernet or Other Connection
 if nc -zw1 google.com 443; then
   echo "we have connectivity"
-sleep 5
-	jamf removeMDMProfile
-	rm -rf /var/db/ConfigurationProfiles
-	sleep 15
-	jamf mdm
-	sleep 15
-	jamf manage
-	sleep 15
-	jamf recon
+sleep 2
+	jamf removeMDMProfile; jamf mdm; jamf manage; jamf recon
+	# sleep 10
+	# jamf mdm
+	# sleep 10
+	# jamf manage
+	# sleep 10
+	# jamf recon
 sleep 2
 echo "jamf complete"
 
