@@ -1,5 +1,6 @@
 # Jamf-Tools-Scripts
-Collection of tools and scripts to be used with Jamf (Jamf Pro)
+
+## Collection of tools and scripts to be used with Jamf (Jamf Pro)
 
 
 Slowly adding collection of helpful scripts and commands that can be used with the JSS. 
