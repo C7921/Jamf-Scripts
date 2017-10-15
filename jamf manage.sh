@@ -38,12 +38,7 @@ if nc -zw1 google.com 443; then
   echo "we have connectivity"
 sleep 2
 	jamf removeMDMProfile; jamf mdm; jamf manage; jamf recon
-	# sleep 10
-	# jamf mdm
-	# sleep 10
-	# jamf manage
-	# sleep 10
-	# jamf recon
+	# Used to have timed sleeps between the commands. Used the above syntax instead. Seems more stable
 sleep 2
 echo "jamf complete"
 
