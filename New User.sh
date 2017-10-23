@@ -23,7 +23,7 @@ read -p 'Password: ' passvar
 
 
 ### Choice for admin account ###
-read -p "Will User be admin? " adminvar
+read -p "Will User be admin? (y or n) " adminvar
 
 if [ "$adminvar" == "y" ]
 then
@@ -36,8 +36,9 @@ then
     sudo dscl . -create /Users/$usernamevar NFSHomeDirectory /Users/$usernamevar
     sudo dscl . -passwd /Users/$usernamevar $passvar
     sudo dscl . -append /Groups/admin GroupMembership $usernamevar
-    sudo dscl . create /Users/$usernamevar Picture "/Library/User\ Pictures/Nature/Leaf.tif"
-    echo "Inital Creation Complteed"
+    sudo createhomedir -c > /dev/null
+    cp -R /System/Library/User\ Template/English.lproj /Users/$usernamevar
+    chown -R $usernamevar:staff /Users/$usernamevar
  
 else
     echo "Creating account without Admin Rights...."
@@ -45,17 +46,17 @@ else
     sudo dscl . -create /Users/$usernamevar UserShell /bin/bash
     sudo dscl . -create /Users/$usernamevar RealName $fullnamevar
     sudo dscl . -create /Users/$usernamevar PrimaryGroupID 20
+    sudo dscl . -create /Users/$usernamevar UniqueID $newid
     sudo dscl . -create /Users/$usernamevar NFSHomeDirectory /Users/$usernamevar
     sudo dscl . -passwd /Users/$usernamevar $passvar
-    sudo dscl . create /Users/$usernamevar Picture  "/Library/User\ Pictures/Nature/Leaf.tif"
-    echo "Inital Creation Completed"
+    sudo createhomedir -c > /dev/null
+    cp -R /System/Library/User\ Template/English.lproj /Users/$usernamevar
+    chown -R $usernamevar:staff /Users/$usernamevar
     
 fi
 
-cp -R /System/Library/User\ Template/English.lproj /Users/$usernamevar
-chown -R $usernamevar:staff /Users/$usernamevar
-
 echo "Account Creation Complete $usernamevar, $fullnamevar, $newid"
+
 exit 0
 
 
