@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # Connor Sanders October 2017
-# Non - Jamf Version, User Prompts 
 # Items can be hardcode. However, the script is designed to run with user/admin input to create user account from those items
 # Usershell will be /bin/bash and Home Directory will be /Local/Users/Username. 
 

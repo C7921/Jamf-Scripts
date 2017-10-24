@@ -58,6 +58,7 @@ networksetup -setairportpower $CURRENT_DEVICE on
 
 else
     exit 1
+    echo "Incorrect Setup, please try again"
 
 fi
 fi
