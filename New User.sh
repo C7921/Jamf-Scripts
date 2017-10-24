@@ -18,6 +18,7 @@ read -p 'FullName: ' fullnamevar
 
 read -p 'Password: ' passvar
 
+# UniqueID can be set here. Would suggest the above values.
 # read -p 'UniqueID: ' NextID
 
 
