@@ -1,25 +1,22 @@
 #!/bin/bash
 #
+# Connor Sanders October 2017
 #
-#
-# Trying to automate a copy of user data between macs.
+# Data tranfer between macs. Set Locations and then confirm
 # 
 #
-#Checks if Root. Needed for permissions
+#Checks if Root. Needed for permissions, depending on the files
 if [[ $EUID -ne 0 ]]; then
 	echo "Try again as Root."
-	exit
+	exit 1
 else
 
 #Source & destination
+read -p 'Source Location: ' varsource
+read -p 'Destionation Location: ' vardestination
 
-echo "Enter Source Location"
-	read varsource
-
-echo "Enter Destination Location"
-	read vardestination
 #Check if correct.
-	read -p "Confirm Correct?(Y Or N) $varshortname $varsource $vardestination" -n 1 -r
+	read -p "Confirm Correct?(Y Or N) $varshortname $varsource $vardestination " -n 1 -r
 		echo   
 		if [[ $REPLY =~ ^[Yy]$ ]]
 		then
@@ -27,13 +24,14 @@ echo "Enter Destination Location"
 	echo "Confirmed... Continuing...."
 	# rsync -av --progess /source/ /destination
 	rsync -av --progress $varsource $vardestination
-   echo "Copy Complete"
+	echo "Copy Complete"
 
 else 
-	exit 1
-	echo "Unable to Complete. Please try again."
+	echo "Exiting. User Cancelled?!"
+	exit 2
+	
    
-fi
+	fi
 
 fi
 
