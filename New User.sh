@@ -5,7 +5,12 @@
 # Usershell will be /bin/bash and Home Directory will be /Local/Users/Username. 
 
 # Requires Root ## Comment out if not needed
-#if [[ $UID -ne 0 ]]; then echo "Please run $0 as root." && exit 1; fi
+if [[ $UID -ne 0 ]]; then echo "Please run $0 as root." && exit 1; fi
+
+# Forces Root # Great when creating executable 
+# if [ "$(id -u)" != "0" ]; then
+#   exec sudo "$0" "$@" 
+# fi
 
 maxid=$(dscl . -list /Users UniqueID | awk '{print $2}' | sort -ug | tail -1)
 newid=$((maxid+1))
