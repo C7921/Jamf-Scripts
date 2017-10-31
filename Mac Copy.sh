@@ -2,7 +2,8 @@
 #
 # Connor Sanders October 2017
 #
-# Data tranfer between macs. Set Locations and then confirm
+# Data tranfer between sources. Set Locations and then confirm. 
+# Originally made for data tranfer between two macs via thunderbolt connection. 
 # 
 #
 #Checks if Root. Needed for permissions, depending on the files
