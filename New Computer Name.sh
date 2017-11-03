@@ -20,4 +20,7 @@ scutil --set ComputerName $NewMachineName
 
 echo "Renaming Completed!"
 
+# Run Recon    # Comment out/remove if not being used with Jamf Pro
+sudo jamf recon
+
 exit 0
