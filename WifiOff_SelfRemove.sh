@@ -1,6 +1,7 @@
 #!/bin/bash
 # Jan 2018 Connor Sanders
-# This script is nice and simple, it gets the current Wi-Fi Device, turns if off and then removes itself.
+# This script is simple, it gets the current Wi-Fi Device, 
+# turns if off and then removes itself.
 
 
 
