@@ -1,5 +1,3 @@
-# Jamf-Tools-Scripts
-
 ## Scripts and Utilities with Jamf Pro
 
 
