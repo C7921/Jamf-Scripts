@@ -1,7 +1,7 @@
 #!/bin//bash
-# October 207
+# October 2017 Connor Sanders
 # Uses Self Service Policy to Create Admin account for end user.
-# 
+#
 
 ## Creates unique ID
 
@@ -12,7 +12,7 @@ newid=$((maxid+1))
 
 usernamevar=`/usr/bin/osascript << EOT
 tell application "System Events"
-    activate 
+    activate
     set usernamevar to text returned of (display dialog "Enter Username" default answer "")
 end tell
 EOT`
@@ -20,7 +20,7 @@ EOT`
 
 fullnamevar=`/usr/bin/osascript << EOT
 tell application "System Events"
-    activate 
+    activate
     set fullnamevar to text returned of (display dialog "Enter Full Name (Avoid Spaces)" default answer "")
 end tell
 EOT`
@@ -28,7 +28,7 @@ EOT`
 
 passvar=`/usr/bin/osascript << EOT
 tell application "System Events"
-    activate 
+    activate
     set pass to text returned of (display dialog "Enter Password (It will be visible)" default answer "")
 end tell
 EOT`
@@ -51,5 +51,3 @@ echo "Creating account with Admin Rights..."
 echo "Account Creation Complete $usernamevar, $fullnamevar, $newid"
 
 exit 0
-
-

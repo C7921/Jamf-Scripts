@@ -2,7 +2,7 @@
 # Connor Sanders 14/2/18
 # Resets Computer Name to variable of asset Tag Number
 # Variable to be set in JSS Policy, ensure that variable is set. Option for hardcoding.
-# 
+#
 #
 # HARDCODED VALUE FOR "NewMachineName" IS SET HERE
 NewMachineName=""

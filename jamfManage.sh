@@ -16,14 +16,14 @@ if [[ $EUID -ne 0 ]]; then
 	echo "Try again as Root."
 	exit
 
-# Pop-up to Connect Ethernet	
+# Pop-up to Connect Ethernet
 else
 osascript -e 'tell application "Terminal" to display dialog "This script requries Ethernet. Please Connect Now." buttons {"OK"} with icon stop'
 if [ $? == 0 ]; then
     echo "Testing Connection"
 
 
-# Current WiFi 
+# Current WiFi
 CURRENT_DEVICE=$(networksetup -listallhardwareports | awk '$3=="Wi-Fi" {getline; print $2}')
 
 
@@ -40,9 +40,9 @@ sleep 2
 	jamf removeMDMProfile; jamf mdm; jamf manage; jamf recon
 	# Used to have timed sleeps between the commands. Used the above syntax instead. Seems more stable
 sleep 2
-echo "jamf complete"
+echo "jamf commands complete"
 
-else 
+else
 echo "No Connection Detected"
 echo "Turning WiFi back on"
 networksetup -setairportpower $CURRENT_DEVICE on
