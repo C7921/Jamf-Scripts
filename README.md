@@ -1,11 +1,16 @@
 # Jamf-Tools-Scripts
 
+<<<<<<< HEAD
 ### Scripts and Utilities with Jamf Pro
+=======
+## Scripts and Utilities with Jamf Pro
+>>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
 
 Slowly adding collection of helpful scripts and commands that can be used with the JSS.
 Some can be used without, however most are design to interact with the JSS.
 The Development branch is mainly for odd ideas and experiments.
 
+<<<<<<< HEAD
 ## Scripts Breakdown
 
 #### AliasInstall.sh
@@ -94,6 +99,9 @@ Handy with SSH or Recon Tab.
 
 
 
+=======
+########
+>>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
 
 Network Interfaces
 
@@ -102,7 +110,11 @@ Network Interfaces
 Applications
 - Vivi.sh
 - UninstallGoogleChrome
+<<<<<<< HEAD
 -
+=======
+- 
+>>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
 
 User Accounts
 - jamfAdminAccounts.sh
@@ -114,3 +126,7 @@ Utilities
 - Rename HDD Variables
 - NewComputerName
 - Mac Copy
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
