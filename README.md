@@ -1,19 +1,17 @@
 # Jamf-Tools-Scripts
 
-<<<<<<< HEAD
+
 ### Scripts and Utilities with Jamf Pro
-=======
-## Scripts and Utilities with Jamf Pro
->>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
+
 
 Slowly adding collection of helpful scripts and commands that can be used with the JSS.
 Some can be used without, however most are design to interact with the JSS.
 The Development branch is mainly for odd ideas and experiments.
 
-<<<<<<< HEAD
+
 ## Scripts Breakdown
 
-#### AliasInstall.sh
+### AliasInstall.sh
 Installs basic Jamf Commands into the current users .Bash_profile to create alias.
 Currently adds;
   - jamf recon
@@ -21,17 +19,17 @@ Currently adds;
   - jamf manage
   - A few other custom calls for JSS policies.
 
-### Planned Updates
+#### Planned Updates
 - More Jamf commands
 - Able to add custom calls for other JSS policies by JSS Policy ID
 
 --------------------------
 
-##### enableARD.sh
+### enableARD.sh
 Can enable or disable ARD Remote Managment for a specified user.
 Grants full or removes all privileges for the specified user.
 
-### Planned Updates
+#### Planned Updates
 - Be able to select user from a list of users {OPTIONAL}
 - Be able to set varying levels of access for the selected users.
 - Sets ARD on for all users.
@@ -96,37 +94,3 @@ Handy with SSH or Recon Tab.
 
 ### RenameHDDVariable.sh
 
-
-
-
-=======
-########
->>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
-
-Network Interfaces
-
-- WifiOff_SelfRemove.sh
-
-Applications
-- Vivi.sh
-- UninstallGoogleChrome
-<<<<<<< HEAD
--
-=======
-- 
->>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
-
-User Accounts
-- jamfAdminAccounts.sh
-- AliasInstall.sh
-
-
-Utilities
-- ResetComputerName.sh
-- Rename HDD Variables
-- NewComputerName
-- Mac Copy
-<<<<<<< HEAD
-=======
-
->>>>>>> 0d72e9cf0c90e1dd512508e1a086676bbe7fadaa
