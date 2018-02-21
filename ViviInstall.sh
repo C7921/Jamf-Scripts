@@ -7,7 +7,7 @@ url='https://api.vivi.io/mac-pkg'
 
 # Installs to TMP Directory
 	echo "Downloading Vivi pkg"
-curl -s -L -o '/tmp/Vivi.pkg' "$url"
+curl -s -L -o '/tmp/Vivi.pkg' "$url" 
 	echo "Download complete. Installing"
 # Installs from TMP Directory
 sudo installer -pkg /tmp/Vivi.pkg -target /

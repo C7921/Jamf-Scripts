@@ -10,7 +10,7 @@ CURRENT_DEVICE=$(networksetup -listallhardwareports | awk '$3=="Wi-Fi" {getline;
 # Turn off WiFi
 echo "Current Wi-Fi Device = '$CURRENT_DEVICE'"
 echo "Wi-Fi is now off"
-networksetup -setairportpower $CURRENT_DEVICE off
+networksetup -setairportpower "$CURRENT_DEVICE" off
 sleep 2
 exit 0
 # rm -- $0
