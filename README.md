@@ -1,4 +1,4 @@
-# Jamf-Tools-Scripts
+wasn't# Jamf-Tools-Scripts
 
 
 ##### Scripts and Utilities with Jamf Pro
@@ -26,7 +26,7 @@ Currently adds;
 --------------------------
 
 ### enableARD.sh
-Can enable or disable ARD Remote Managment for a specified user.
+Can enable or disable ARD Remote Management for a specified user.
 Grants full or removes all privileges for the specified user.
 
 #### Planned Updates
@@ -46,12 +46,12 @@ Note, this is NOT the same as the Backup and Sync app (thats the personal one).
 - Loading bar
 
 ### jamfAdminAccount.sh
-Creates an admin accout with GUI. Initally created for rollout with replacement laptop program.
+Creates an admin account with GUI. Initially created for rollout with replacement laptop program.
 Runs easily from Jamf Pro Self Service.
 
 #### Planned Updates
 - Better GUI {MAYBE PYTHON variable?}
-- Using JSS API if created user is present in JSS, asign machine to that user. If not found, create user in JSS?
+- Using JSS API if created user is present in JSS, assign machine to that user. If not found, create user in JSS?
 	1. The above makes it easier than using the built in Apple System Prefs
 - Can handle spaces in the FullName
 - Hash/block out password when entered.
@@ -60,7 +60,7 @@ Runs easily from Jamf Pro Self Service.
 
 ### JamfManage.sh
 Created to resolve profiles and certificate issue with certain Macs.
-Turns off Wifi and checks connection to ensure no dropouts. Runs several Jamf commands that collectivly resolves most jamf related issue.
+Turns off Wifi and checks connection to ensure no dropouts. Runs several Jamf commands that collectively resolves most jamf related issue.
 (Not jamfs fault!)
 
 #### Planned Updates
@@ -71,29 +71,29 @@ Turns off Wifi and checks connection to ensure no dropouts. Runs several Jamf co
 ---------------------------
 
 ### MacCopy.sh
-Creates terminal options to tranfer files between devices or directories.
+Creates terminal options to transfer files between devices or directories.
 
 #### Planned Updates
-- If changing user accouts or different computers set permission to current parent directory new owner. If not parent directory set as root.
+- If changing user accounts or different computers set permission to current parent directory new owner. If not parent directory set as root.
 - Option for GUI?
-- Option for tranfer variables to be set in JSS Policy.
+- Option for transfer variables to be set in JSS Policy.
 
 ---------------------------
 
 ### NewComputerName.sh
 Displays Popup Window for new hostname of machine.
-Changes the localname, hostname, and computername.
+Changes the local-name, hostname, and computer-name.
 If being used with JSS, would suggest using the Maintenance Tab to update inventory rather than adding it at the end of script.
 Partly for sanity and partly for log sake.
 
 #### Updates Planned
-- Option to use AssetTag field in JSS as Suxfix or Prefix in hostname
+- Option to use AssetTag field in JSS as Suffix or Prefix in hostname
 -
 
 ---------------------------
 
 ### NewUser.sh
-Similar to Jamf Admin Account. Create New User (option to create admin) in termial windows.
+Similar to Jamf Admin Account. Create New User (option to create admin) in terminal windows.
 Handy with SSH or Recon Tab.
 
 #### Planned Updates
@@ -115,25 +115,34 @@ Resets computer name of machine based on JSS policy variable.
 Hostname able to be hardcoded, also checks to make sure a variable is entered. Similar to the New Computer Name.sh
 
 #### Planned Updates
-- Finds the old hostname in JSS, then updatse and re-assigns new hostname to user of old hostname. (Might already occur due to how JSS updates the hostnames)
+- Finds the old hostname in JSS, then updates and re-assigns new hostname to user of old hostname. (Might already occur due to how JSS updates the hostnames)
 - Improved flow and variable syntax
 
 ---------------------------
 
 ### UninstallGoogleChrome.sh
-Completetly removes Google Chrome. Handy for a clean re-install or just to ensure that is removed.
+Completely removes Google Chrome. Handy for a clean re-install or just to ensure that is removed.
 
 #### Planned Updates
 - Better Log File
 - Able to use script to update Chrome rather than clean re-install
-- Able to carry the same logged in user into new Chrome intall (This and above idea might be different script altogether)
+- Able to carry the same logged in user into new Chrome install (This and above idea might be different script altogether)
+
+---------------------------
+
+### UpdateGoogleChrome.sh
+Removed the core app from the /Applications Folder. Re-installs it if it was present and downloads and installs a new version if it wasnt present. Does not impact the stored user data in Google Chrome.
+
+#### Planned updates
+- Better flow and sync for variables.
+- Better method of checking if the app was already installed
 
 ---------------------------
 
 ### ViviInstall.sh
-Silent download and installs lastest verion of Vivi.pkg from enterprise site.
+Silent download and installs latest version of Vivi.pkg from enterprise site.
 Handy for update rollouts.
-NOTE: Used this rather than an App Store app so that Apple ID's aren't required and using the JSS Policy features there is more flexability when deploying
+NOTE: Used this rather than an App Store app so that Apple ID's aren't required and using the JSS Policy features there is more flexibility when deploying
 
 #### Planned Updates
 - Improved syntax
