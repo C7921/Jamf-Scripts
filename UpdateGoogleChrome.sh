@@ -13,7 +13,7 @@ downloadURL="https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
 appName="Google Chrome.app"
 appInstalled=$(ls /Applications/ | grep -i "${appName}")
 
-if [ "$appInstalled" == "$appName" ]; then
+if [ ! -d "$appName" ]; then
 	echo "'Google Chrome' is installed, starting update..."
 	  # Quit Google Chrome
 	echo "Quitting Chrome"
@@ -24,7 +24,7 @@ if [ "$appInstalled" == "$appName" ]; then
 		rm -rf /Applications/Google\ Chrome.app
 	# Downloading new verion of Google Chrome
 	echo "Downloading File..."
-		curl -s -o "/tmp/${dmg}" "$downloadURL"
+		curl -s -o "/tmp/${dmgName}" "$downloadURL"
 	echo "Mounting DMG..."
 		hdiutil mount /tmp/${dmgName} -nobrowse -quiet
 	echo "Installing new version"
@@ -43,7 +43,7 @@ else
 	echo "Starting Install..."
 	# Downloading new verion of Google Chrome
 	echo "Downloading File..."
-		curl -s -o "/tmp/${dmg}" "$downloadURL"
+		curl -s -o "/tmp/${dmgName}" "$downloadURL"
 	echo "Mounting DMG..."
 		hdiutil mount /tmp/${dmgName} -nobrowse -quiet
 	echo "Installing new version"
