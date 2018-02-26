@@ -36,6 +36,15 @@ Grants full or removes all privileges for the specified user.
 
 ---------------------------
 
+### GoogleDriveFSUpdate.sh
+Silent downloads and installs the latest version of the Google Drive File Stream App.
+Note, this is NOT the same as the Backup and Sync app (thats the personal one).
+
+### Planned updates
+- Google Drive Backup and Sync
+- PKG variable
+- Loading bar
+
 ### jamfAdminAccount.sh
 Creates an admin accout with GUI. Initally created for rollout with replacement laptop program.
 Runs easily from Jamf Pro Self Service.
@@ -55,7 +64,7 @@ Turns off Wifi and checks connection to ensure no dropouts. Runs several Jamf co
 (Not jamfs fault!)
 
 #### Planned Updates
-- Be able to resolve Binary issues 
+- Be able to resolve Binary issues
 - Check and remove expired certificate
 - Better option to check for internet connection
 
@@ -77,15 +86,15 @@ Changes the localname, hostname, and computername.
 If being used with JSS, would suggest using the Maintenance Tab to update inventory rather than adding it at the end of script.
 Partly for sanity and partly for log sake.
 
-#### Updates Planned 
+#### Updates Planned
 - Option to use AssetTag field in JSS as Suxfix or Prefix in hostname
-- 
+-
 
 ---------------------------
 
 ### NewUser.sh
-Similar to Jamf Admin Account. Create New User (option to create admin) in termial windows. 
-Handy with SSH or Recon Tab. 
+Similar to Jamf Admin Account. Create New User (option to create admin) in termial windows.
+Handy with SSH or Recon Tab.
 
 #### Planned Updates
 - Can have the variables set in the JSS. (Optional though? Have the script still run without being set)
@@ -123,7 +132,7 @@ Completetly removes Google Chrome. Handy for a clean re-install or just to ensur
 
 ### ViviInstall.sh
 Silent download and installs lastest verion of Vivi.pkg from enterprise site.
-Handy for update rollouts. 
+Handy for update rollouts.
 NOTE: Used this rather than an App Store app so that Apple ID's aren't required and using the JSS Policy features there is more flexability when deploying
 
 #### Planned Updates
@@ -141,9 +150,3 @@ Script would run to disable Wifi, then would install a config profile to restric
 - List of Network Interfaces to print off.
 - Easy access to turn wifi back on again.
 - Check High Sierra support
-
-
-
-
-
-
