@@ -3,7 +3,7 @@
 # Connor Sanders 26/2/18
 # Updates Google Chrome to the latest version.
 # Only removes and replaces data from the /Applications Folder. Logged in User and bookmark information shouldn't be impacted.
-# Mostly taken from the UninstallGoolgeChrome.sh from the same repo. 
+# Mostly taken from the UninstallGoolgeChrome.sh from my same repo. 
 ################
 app="Google Chrome"
 dmgName="googlechrome.dmg"
