@@ -15,7 +15,7 @@
 ARDUser=""
 
 
-# Check that value has been entered inot variable $4
+# Check that value has been entered into variable $4
 
 if [ "$4" != "" ] && [ "$ARDUser" == "" ]; then
 	ARDUser=$4
