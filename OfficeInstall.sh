@@ -2,6 +2,7 @@
 # Connor Sanders
 # Downloads and Installs the latest Version of Office. 
 # Requires office apps to close for the install
+# Best used with Office 365 Logins
 
 url="https://go.microsoft.com/fwlink/?linkid=525133"
 pkgName="MSOffice_Installer.pkg"
