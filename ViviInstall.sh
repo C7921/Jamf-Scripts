@@ -5,7 +5,7 @@
 
 url='https://api.vivi.io/mac-pkg'
 
-# Installs to TMP Directory
+# Downloads to TMP Directory
 	echo "Downloading Vivi pkg"
 curl -s -L -o '/tmp/Vivi.pkg' "$url" 
 	echo "Download complete. Installing"
