@@ -1,4 +1,4 @@
-wasn't# Jamf-Tools-Scripts
+# Jamf-Tools-Scripts
 
 
 ##### Scripts and Utilities with Jamf Pro
