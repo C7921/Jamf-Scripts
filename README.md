@@ -101,6 +101,18 @@ Handy with SSH or Recon Tab.
 
 ---------------------------
 
+### OfficeInstall.sh
+Downloads and installs latest version of Office.
+Best used with Office 365 for easy user activation.
+
+#### Planned updates
+- Better Syntax
+- Improve variable integration and install location
+- Checking for current office versions.
+- Quitting currently open office apps.
+
+---------------------------
+
 ### RenameHDDVariable.sh
 Checks with JSS to see if a variable has been entered, also checks if the name has already been changed.
 
