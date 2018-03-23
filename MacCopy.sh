@@ -17,7 +17,7 @@ read -p 'Source Location: ' varsource
 read -p 'Destionation Location: ' vardestination
 
 #Check if correct.
-	read -p "Confirm Correct?(Y Or N) $varshortname $varsource $vardestination " -n 1 -r
+	read -p "Confirm Correct?(Y Or N) $varsource $vardestination " -n 1 -r
 		echo   
 		if [[ $REPLY =~ ^[Yy]$ ]]
 		then
