@@ -13,8 +13,8 @@ if [[ $EUID -ne 0 ]]; then
 else
 
 #Source & destination
-read -p 'Source Location: ' varsource
-read -p 'Destionation Location: ' vardestination
+read -p 'Source Location: 'varsource
+read -p 'Destionation Location: 'vardestination
 
 #Check if correct.
 	read -p "Confirm Correct?(Y Or N) $varsource $vardestination " -n 1 -r
