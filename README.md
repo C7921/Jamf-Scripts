@@ -113,6 +113,14 @@ Best used with Office 365 for easy user activation.
 
 ---------------------------
 
+### RemoveKeyChainItem.sh
+Removes selected keychain item name that is parsed in the Parameter
+
+#### Planned updates
+- Better flow and reprint for the grep and cut Commands
+- Improve own understanding of keychain items in command line and security commands
+- Better layout and format 9(visually...)
+
 ### RenameHDDVariable.sh
 Checks with JSS to see if a variable has been entered, also checks if the name has already been changed.
 
