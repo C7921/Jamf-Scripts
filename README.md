@@ -40,7 +40,7 @@ Grants full or removes all privileges for the specified user.
 Silent downloads and installs the latest version of the Google Drive File Stream App.
 Note, this is NOT the same as the Backup and Sync app (thats the personal one).
 
-### Planned updates
+#### Planned updates
 - Google Drive Backup and Sync
 - PKG variable
 - Loading bar
