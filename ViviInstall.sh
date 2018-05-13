@@ -15,4 +15,5 @@ sudo installer -pkg /tmp/Vivi.pkg -target /
 sleep 1
 rm /tmp/Vivi.pkg
 	echo "Update Complete."
+	# rm $0
 exit 0
