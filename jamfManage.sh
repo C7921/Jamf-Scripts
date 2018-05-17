@@ -63,4 +63,4 @@ else
 fi
 fi
 
-exit 0s
+exit 0
