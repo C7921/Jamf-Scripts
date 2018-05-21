@@ -11,9 +11,13 @@ echo "alias policy='sudo jamf policy'" >> ~/.bash_profile
 echo "alias manage='sudo jamf manage'" >> ~/.bash_profile
 echo "alias AppsTest='sudo jamf policy -event soe'" >> ~/.bash_profile
 echo "alias Dock='sudo jamf policy -event dock'" >> ~/.bash_profile
+echo "alias c='clear'" >> ~/.bash_profile
+echo "alias ce='clear && exit'" >> ~/.bash_profile
+echo "alias bh='bash ~/Library/Init/brewMaintenance.sh'" >> ~/.bash_profile
+
+
 
 # Set Source
-
 
 source ~/.bash_profile
 
