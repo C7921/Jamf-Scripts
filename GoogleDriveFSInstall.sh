@@ -1,8 +1,7 @@
 #!/bin/bash
-##############
+#
 # Connor Sanders 26/2/18
 # Downloads and Silent installs the latest Version of Google Drive File Stream
-##############
 
 dmgName="GoogleDriveFileStream.dmg"
 VolumeName="Install Google Drive File Stream"
