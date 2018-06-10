@@ -6,10 +6,15 @@
 touch /Library/Logs/ChromeUninstall.log
 logfile="/Library/Logs/ChromeUninstall.log"
 app="Google Chrome"
+appName="Google Chrome.app"
+appInstalled=$(ls /Applications/ | grep -i "${appName}")
 
-if open -Ra "$app" ; then
+# Chrome file location array
+chromeFiles=(/Applications/Google\ Chrome.app ~/Library/Application\ Support/Google/Chrome)
+
+if [ "$appInstalled" == "$appName" ]; then
 	echo "---" >> ${logfile}
-  	echo "`date`: 'Google Chrome' is installed, starting removal..."
+		echo "`date`: ${appName} is installed"
 
   # Quit Google Chrome
 		echo "`date`: Quitting Chrome" >> ${logfile}
@@ -17,15 +22,11 @@ if open -Ra "$app" ; then
 		osascript -e 'quit app "Google Chrome"'
 	sleep 3
 
-# Remove from Applications Folder
-		echo "`date`: Removing from Applications Folder" >> ${logfile}
-		echo "Removing from Applicaitons Folder"
-	rm -rf /Applications/Google\ Chrome.app
-
-# Removing Library Files
-		echo "`date`: Removing Library Files" >> ${logfile}
-		echo "Removing Library Files"
-	rm -rf ~/Library/Application\ Support/Google/Chrome
+	# Removing Files
+		for c in "${chromeFiles[@]}"
+		do 
+			echo "$c is removed" && rm -rf $c
+		done
 
 # Successfully Uninstalled Google Chrome
 		echo "`date`: Successfully Uninstalled Google Chrome" >> ${logfile}

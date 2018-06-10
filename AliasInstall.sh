@@ -14,8 +14,8 @@ echo "alias Dock='sudo jamf policy -event dock'" >> ~/.bash_profile
 echo "alias c='clear'" >> ~/.bash_profile
 echo "alias ce='clear && exit'" >> ~/.bash_profile
 echo "alias bh='bash ~/Library/Init/brewMaintenance.sh'" >> ~/.bash_profile
-echo "alias nomad=open -a NoMad" >> ~/.bash_profile
-
+echo "alias nomad='open -a NoMad'" >> ~/.bash_profile
+echo "alias cdgit='cd ~/Documents/Github %% pwd; sleep .2 && clear'"
 
 # Set Source
 

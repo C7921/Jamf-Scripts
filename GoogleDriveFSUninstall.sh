@@ -1,7 +1,6 @@
 #!/bin/bash
 # Connor Sanders May 2018
 # Completley Uninstalls Google Drive File Stream
-# Suggested to run as root, to avoid permission issues.
 
 appName="Google Drive File Stream.app"
 appInstalled=$(ls /Applications/ | grep -i "${appName}")

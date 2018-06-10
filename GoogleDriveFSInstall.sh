@@ -8,6 +8,7 @@ VolumeName="Install Google Drive File Stream"
 targetDrive="/Volumes/Macintosh HD"
 downloadURL="https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg"
 
+
 # Downloading File
 echo "Downloading DMG File..."
 	curl -s -L -o "/tmp/$dmgName" "$downloadURL"
