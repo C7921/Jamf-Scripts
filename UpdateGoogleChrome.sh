@@ -3,7 +3,7 @@
 # Connor Sanders 26/2/18
 # Updates Google Chrome to the latest version.
 # Only removes and replaces data from the /Applications Folder. Logged in User and bookmark information shouldn't be impacted.
-# Mostly taken from the UninstallGoolgeChrome.sh from my same repo. 
+# Mostly taken from the UninstallGoolgeChrome.sh from my same repo.
 ################
 app="Google Chrome"
 dmgName="googlechrome.dmg"
@@ -14,8 +14,7 @@ appName="Google Chrome.app"
 appInstalled=$(ls /Applications/ | grep -i "${appName}")
 
 # Chrome file location array
-chromeFiles=(/Applications/Google\ Chrome.app 
-	~/Library/Application\ Support/Google/Chrome)
+chromeFiles=("/Applications/Google\ Chrome.app") # "~/Library/Application\ Support/Google/Chrome")
 
 # Function Start - Reinstall
 function reinstallChrome {
@@ -68,7 +67,7 @@ if [ "$appInstalled" == "$appName" ]; then
 	# echo "Deleting DMG File..."
 	# 	rm /tmp/$dmgName
 	# echo "Upgrade Complete"
-		exit 0 
+		exit 0
 
 else
 	echo "Google Chrome is not installed"
@@ -91,4 +90,3 @@ else
 	exit 1
 
 fi
-
