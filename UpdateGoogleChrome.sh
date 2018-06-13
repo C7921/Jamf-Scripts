@@ -14,7 +14,7 @@ appName="Google Chrome.app"
 appInstalled=$(ls /Applications/ | grep -i "${appName}")
 
 # Chrome file location array
-chromeFiles=("/Applications/Google\ Chrome.app") "~/Library/Application\ Support/Google/Chrome")
+chromeFiles=("/Applications/Google\ Chrome.app" "~/Library/Application\ Support/Google/Chrome")
 
 # Function Start - Reinstall
 function reinstallChrome {

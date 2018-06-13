@@ -41,10 +41,12 @@ function reinstallDriveFS {
 if [ "$appInstalled" == "$appName" ]; then
 		echo "${appName} is installed."
 		echo "Starting removing."
-
+		# Work around removal
+		rm -rf /Applications/Google\ Drive\ File\ Stream.app 
+		rm -rf ~/Library/Application\ Support/Google/DriveFS
 		for d in "${driveFiles[@]}"
 			do
-				rm -rf $d
+				# rm -rf $d
 				echo "$d is removed."
 			done
 		echo "Removal Completed."
