@@ -11,9 +11,38 @@
 
 # NOTES
 # - Yes, this can be made really easy using Automator.
-# - This will probably become a command line tool for mac.
- 
+# - This will hopefully become a command line tool for mac.
+
 # To Do:
 # - Functions/ inital check for intel mac etc -- System Requirements
 # - Notate the steps required and assign dependencies
 # - Easy to read ReadME
+
+# source ~/Library/init/utils.sh
+
+### Check for and download dependencies
+utilsFolder=~/Library/macOSCopy/
+utilsFile=~/Library/macOSCopy/utils.sh
+
+if [ ! -d "${utilsFile}" ]
+then
+    echo "${utilsFile} not found."
+    # Downloading files required.
+    mkdir ~/Library/macOSCopy
+    wget https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/CopyTool/utils.sh
+    echo "Download Complete. Setting source links"
+    source ${utilsFile}
+fi
+
+
+# Starting tool
+# Heading
+clear
+e_header "macOS Copy Tool"
+# e_bold "          Connor Sanders 2018"
+sleep 1
+
+e_success "Starting Copy tool"
+# Seeking source
+e_arrow "Enter source location:" && read -p "" varsource
+e_bold "You have entered:" && e_warning "$varsource"
