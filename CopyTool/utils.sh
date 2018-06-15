@@ -2,7 +2,6 @@
 # Thanks to Nathaniel Landau for this amazing utitls script.
 # Full artile and more amazing info here: https://natelandau.com/bash-scripting-utilities/https://natelandau.com/bash-scripting-utilities/
 #
-# Uploaded this to Github for the CopyTool Script. 
 # Set Colors
 #
 
