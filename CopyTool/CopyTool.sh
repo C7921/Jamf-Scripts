@@ -3,10 +3,6 @@
 # Created as a test for more complex functions, source scripts and other stuff
 # Connor Sanders May 2018.
 
-# GOALS
-# - Clear and easy commands
-# - Option for user permission after copy complete.
-
 ### Check for and download dependencies
 utilsFolder=~/Library/macOSCopy
 utilsFile=~/Library/macOSCopy/utils.sh
@@ -94,3 +90,5 @@ seek_confirmation "Change file ownership to you?"
   else
     e_error "Permissions have not been changed."
   fi
+
+e_header "CopyTool complete. Exiting."
