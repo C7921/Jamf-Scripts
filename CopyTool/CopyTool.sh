@@ -57,7 +57,7 @@ function copyData() {
 }
 
 function userPermissions() {
-    user=`whoami`
+    user= who -m | awk '{print $1;}'
     group=admin
     echo $user
     sudo chown $user:$group $vardestination
@@ -82,7 +82,6 @@ checkConfirm
 e_success "Source and destination set! Starting Copy."
 sleep 1
 copyData
-
 # Check for permission change
 seek_confirmation "Change file ownership to you?"
   if is_confirmed; then
