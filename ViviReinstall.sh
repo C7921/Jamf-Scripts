@@ -1,26 +1,27 @@
 #!/bin/bash
-# Connor Sanders June 2018 
+# Connor Sanders June 2018
 # Added Reinstall function
 
-# App name 
+# App name
 appName="Vivi.app"
 appInstalled=$(ls /Applications/ | grep -i "${appName}")
 
 # Vivi file location array
-viviFiles=(/Applications/Vivi.app 
-		~/Library/Containers/au.com.viviaustralia.mac 
-		~/Library/Preferences/au.com.viviaustralia.mac.helper.plist 
-		~/Library/Prefernces/au.com.viviaustralia.mac.plist 
+viviFiles=(/Applications/Vivi.app
+		~/Library/Containers/au.com.viviaustralia.mac
+		~/Library/Preferences/au.com.viviaustralia.mac.helper.plist
+		~/Library/Prefernces/au.com.viviaustralia.mac.plist
 		~/Library/Application\ Support/Vivi )
 
 
 # Function Start - Reinstall
-		url='https://api.vivi.io/mac-pkg'
+		# url='https://api.vivi.io/mac-pkg'-- OLD LINK
+		url='https://api.vivi.io/mac'
 
 function viviReinstall {
 		# Downloads to TMP Directory
 			echo "Downloading Vivi pkg"
-		curl -s -L -o '/tmp/Vivi.pkg' "$url" 
+		curl -s -L -o '/tmp/Vivi.pkg' "$url"
 			echo "Download complete. Installing"
 		# Installs from TMP Directory
 		sudo installer -pkg /tmp/Vivi.pkg -target /
@@ -38,14 +39,14 @@ function viviReinstall {
 		echo "Starting removing."
 
 			for v in "${viviFiles[@]}"
-			do 
+			do
 				echo "$v is removed" && rm -rf $v
 			done
 
 		echo "Removal Completed"
 			#Poses reinstall
 			read -p "Reinstall? (Y Or N)" -n 1 -r
-			echo   
+			echo
 		if [[ $REPLY =~ ^[Yy]$ ]]
 		then
 			#Starts Reinstall
@@ -60,7 +61,7 @@ function viviReinstall {
 		echo "${appName} not installed."
 			#Poses reinstall
 			read -p "Reinstall? (Y Or N)" -n 1 -r
-			echo   
+			echo
 		if [[ $REPLY =~ ^[Yy]$ ]]
 		then
 			#Starts Reinstall
