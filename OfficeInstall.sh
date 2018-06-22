@@ -1,6 +1,6 @@
 #!/bin/bash
 # Connor Sanders
-# Downloads and Installs the latest Version of Office. 
+# Downloads and Installs the latest Version of Office.
 # Requires office apps to close for the install
 # Best used with Office 365 Logins
 
