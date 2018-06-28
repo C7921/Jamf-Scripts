@@ -11,6 +11,3 @@ else
 fi
 
 echo "<result>$Docked</result>"
-
-
-echo $onenoteDock
