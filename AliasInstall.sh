@@ -17,6 +17,9 @@ echo "alias bh='bash ~/Library/Init/brewMaintenance.sh'" >> ~/.bash_profile
 echo "alias nomad='open -a NoMad'" >> ~/.bash_profile
 echo "alias cdgit='cd ~/Documents/Github %% pwd; sleep .2 && clear'" >> ~/.bash_profile
 echo "alias gj='cd ~/Documents/Github/Jamf-Scripts/'" >> ~/.bash_profile
+echo "alias dp='cd ~/Desktop/'" >> ~/.bash_profile
+echo "alias dl='cd ~/Downloads/'" >> ~/.bash_profile
+echo "alias do='cd ~/Documents/'" >> ~/.bash_profile
 
 # Set Source
 
