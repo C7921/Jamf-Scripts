@@ -10,11 +10,11 @@ if [ ! -d "${utilsFile}" ]
 then
     echo "${utilsFile} not found."
     # Downloading files required.
-    mkdir ~/Library/downloadFF && echo "Created Directory"
+    mkdir ~/Library/downloadFF && echo "Created Directory."
     # wget -P -b ${utilsFolder} https://github.com/C7921/Jamf-Scripts/raw/master
     # Dont be mad. Using cURl as not every mac has wget.
     cd ${utilsFolder} && { curl -L -O https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/CopyTool/utils.sh ; cd -; }
-    echo "Download Complete. Setting source links"
+    echo "Download Complete. Setting source links."
     source ${utilsFile}
     # echo ${utilsFile}
   else
@@ -32,33 +32,39 @@ appName="Firefox.app"
 
 ### Function defining ###
 function setDestination() {
-  e_arrow "Enter destination location:" && read -p "" vardestination
+  e_arrow "Enter destination location: (Full Path and trailing /)" && read -p "" vardestination
   e_bold "You have entered:" && e_warning "$vardestination"
 }
 
 function downloadFF() {
   e_success "Downloading DMG File..."
-    curl -s -L -o "$vardestination $dmgName" "$downloadURL"
+    curl -s -L -o "$vardestination$dmgName" "$downloadURL"
 }
 
 function scriptLink() {
   mkdir /tmp/ffInstall
-  cd /tmp/ffInstall && { curl -L -O https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/CopyTool/utils.sh ; cd -; }
-  e_note "Require Admin access to install"
-  sudo bash FirefoxInstall.sh
+  cd /tmp/ffInstall && { curl -L -O https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/FirefoxInstall.sh ; cd -; }
+  e_note "May require Admin access to install..."
+  sudo bash /tmp/ffInstall/FirefoxInstall.sh
+  sleep 2
+  e_success "Firefox has been installed. Removing old files..."
+  rm -rf /tmp/ffInstall
+  exit 0
 }
 
 function installFF() {
   seek_confirmation "Install Firefox?"
   if is_confirmed; then
-    e_success "Starting install process"
+    e_success "Starting install process."
     scriptLink
   else
     e_error "Not Installing."
   fi
 }
 # Set destination and download
+clear
 setDestination
 downloadFF
+installFF
 
 e_header "Firefox download complete."
