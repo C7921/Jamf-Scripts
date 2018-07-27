@@ -20,7 +20,8 @@ echo "alias gj='cd ~/Documents/Github/Jamf-Scripts/'" >> ~/.bash_profile
 echo "alias dp='cd ~/Desktop/'" >> ~/.bash_profile
 echo "alias dl='cd ~/Downloads/'" >> ~/.bash_profile
 echo "alias do='cd ~/Documents/'" >> ~/.bash_profile
-
+echo "alias appcheck='bash ~/Library/init/checkApps.sh'" >> ~/.bash_profile
+ 
 # Set Source
 
 source ~/.bash_profile
