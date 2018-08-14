@@ -33,7 +33,7 @@ sleep 1
 sleep 1
 ####################################################################################################
 # Creates Log File
-log=~/Desktop/log.txt
+log=~/Desktop/ProvisionLog.txt
 /usr/bin/touch $log
 
 dateStamp=$( date "+%a %b %d %H:%M:%S")
