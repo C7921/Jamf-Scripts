@@ -31,6 +31,7 @@ sleep 1
 sleep 1
 /bin/echo "1..."
 sleep 1
+/bin/echo "GO!"
 ####################################################################################################
 # Creates Log File
 log=~/Desktop/ProvisionLog.txt
@@ -51,7 +52,7 @@ dateStamp=$( date "+%a %b %d %H:%M:%S")
 # Prompt for Asset Tag // Using script instead of Call. Test to reduce recons.
 # /usr/local/jamf/bin/jamf policy -trigger provision_tagprompt
 tag=$(osascript -e 'Tell application "System Events" to display dialog "Please enter the Asset Tag of the computer." default answer ""' -e 'text returned of result')
-echo $tag >> $log
+echo "Set tag to: " $tag >> $log
 /usr/local/jamf/bin/jamf recon -assetTag $tag
 
 # Installs Google Chrome
@@ -67,7 +68,7 @@ echo $tag >> $log
 
 # Installs Vivi
 /usr/local/jamf/bin/jamf policy -trigger provision_vivi
-  vivi_version=$( defaults read /Applications/Vivi.app/Contents/Info.plist CFBundleShortVersionString )
+  vivi_version=$(defaults read /Applications/Vivi.app/Contents/Info.plist CFBundleShortVersionString)
     if [[ $vivi_version == "" ]]; then
       # Not Installed
       /bin/echo "Vivi install failed." >> $log
