@@ -48,8 +48,11 @@ dateStamp=$( date "+%a %b %d %H:%M:%S")
 /usr/local/jamf/bin/jamf policy -trigger provision_nameprompt
   /bin/echo "Set name to $HOSTNAME" >> $log
 
-# Prompt for Asset Tag
-/usr/local/jamf/bin/jamf policy -trigger provision_tagprompt
+# Prompt for Asset Tag // Using script instead of Call. Test to reduce recons.
+# /usr/local/jamf/bin/jamf policy -trigger provision_tagprompt
+tag=$(osascript -e 'Tell application "System Events" to display dialog "Please enter the Asset Tag of the computer." default answer ""' -e 'text returned of result')
+echo $tag >> $log
+/usr/local/jamf/bin/jamf recon -assetTag $tag
 
 # Installs Google Chrome
 /usr/local/jamf/bin/jamf policy -trigger provision_googlechrome
