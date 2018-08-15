@@ -5,8 +5,8 @@ installerVersion=67.0.3396.99
 
 if [ -x "$chromePath" ]; then
   echo "Chrome installed"
-  echo "Installed Chrome Version is "$chromeVersion
-    if [ $chromeVersion == $installerVersion ]; then
+  echo "Installed Chrome Version is $chromeVersion"
+    if [ "$chromeVersion" == "$installerVersion" ]; then
       echo "Installed Chrome up to date."
       UpdateNeeded=False
     else

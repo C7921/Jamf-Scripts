@@ -14,7 +14,7 @@ then
     mkdir ~/Library/macOSCopy && echo "Created Directory"
     # wget -P -b ${utilsFolder} https://github.com/C7921/Jamf-Scripts/raw/master
     # Dont be mad. Using cURl as not every mac has wget.
-    cd ${utilsFolder} && { curl -L -O https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/CopyTool/utils.sh ; cd -; }
+    cd ${utilsFolder} && { curl -L -O https://raw.githubusercontent.com/C7921/Jamf-Scripts/master/CopyTool/utils.sh ; cd -;}
     echo "Download Complete. Setting source links"
     source ${utilsFile}
     # echo ${utilsFile}
@@ -52,15 +52,15 @@ function checkConfirm() {
 }
 
 function copyData() {
-  rsync -av --progress $varsource $vardestination
+  rsync -av --progress "$varsource" "$vardestination"
   e_success "Complete."
 }
 
 function userPermissions() {
-    user= who -m | awk '{print $1;}'
+    user=$(who -m | awk '{print $1;}')
     group=admin
-    echo $user
-    sudo chown $user:$group $vardestination
+    echo "$user"
+    sudo chown "$user":"$group" "$vardestination"
     e_success "Permissions have been set."
 }
 
