@@ -40,6 +40,7 @@ Installing scripts as Extension Attributes can be useful for gathering extra inf
 
 ## Contributing
 
+All contributions welcome. 
 Please read [CONTRIBUTING.md](https://github.com/C7921/Jamf-Scripts).
 
 
