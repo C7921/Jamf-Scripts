@@ -4,17 +4,9 @@
 # PURPOSE
 # - Provisioning based on policy to replace imaging.
 # HISTORY
-#   Version: 1.0
-#   - Connor Sanders 9 August 2018
+#   Version: 1.0.1 - Creation.
+#   - Connor Sanders 17 August 2018
 #      - Build and structure
-#   Version: 1.1
-#   - Connor Sanders 14 August 2018
-#      - Added version install checks
-#   Version: 1.2
-#   - Connor Sanders 15 August 2018
-#      - Fixed error with Version Checks
-#      - Cleaned up apps without CFBundleShortVersionString (PCClient & Vivi)
-#
 #
 ####################################################################################################
 
