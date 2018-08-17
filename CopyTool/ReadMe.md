@@ -1,6 +1,6 @@
 # Copy Tool
 
-A macOS Copy script that allows for the easy copy and transfer of files and folders. Using Rsync
+A macOS Copy script that allows for the easy copy and transfer of files and folders. Using Rsync:
 
 ![Alt Text](https://media.giphy.com/media/6bdhbLDA8Iuk1IFcx4/giphy.gif)
 
