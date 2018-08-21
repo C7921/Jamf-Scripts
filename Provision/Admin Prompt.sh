@@ -1,0 +1,1 @@
+/usr/bin/osascript -e 'do shell script "ProvisionStudent.sh" args 2>&1 etc" with administrator privileges'
