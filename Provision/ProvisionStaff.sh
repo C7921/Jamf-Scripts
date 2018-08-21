@@ -37,7 +37,7 @@ dateStamp=$( date "+%a %b %d %H:%M:%S")
 
 ### Main Apps ###
 # Prompt for Computer Name
-/usr/local/jamf/bin/jamf policy -trigger provision_nameprompt
+/usr/local/jamf/bin/jamf policy -trigger provision_nameprompt; sleep 5
   /bin/echo "Set name to $HOSTNAME" >> $log
 
 # Prompt for Asset Tag // Using script instead of Call. Test to reduce recons.
@@ -48,6 +48,8 @@ echo "Set tag to: " $tag >> $log
 
 # Installs Google Chrome
 /usr/local/jamf/bin/jamf policy -trigger provision_googlechrome
+  # Option for Google Chrome version read out.
+  # chrome_version=$(defaults read /Applications/Google\ Chrome.app/Contents/Info.plist CFBundleShortVersionString)
   chrome_version=$(mdls -name kMDItemVersion /Applications/Google\ Chrome.app | cut -c 19- | rev | cut -c 2- | rev)
     if [[ $chrome_version == *"could not find"* ]]; then
         # Not Installed

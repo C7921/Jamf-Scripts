@@ -2,7 +2,6 @@
 # Thanks to Jamf Nation User ubcoits
 # https://www.jamf.com/jamf-nation/discussions/28097/jamf-pro-10-4-and-quick-add-package-bug#responseChild167370
 
-
 # check for SymLink
 if [ -L "/usr/local/bin" ]; then
   rm "/usr/local/bin"
