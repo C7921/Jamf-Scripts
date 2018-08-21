@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Connor Sanders June 2018
-#
+# Assuming Hard Drive name is Macintosh HD
 
 # Downloads and silently latest installer from Firefox site
 dmgName="Firefox.dmg"
