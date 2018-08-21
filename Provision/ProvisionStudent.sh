@@ -46,7 +46,7 @@ dateStamp=$( date "+%a %b %d %H:%M:%S")
 
 ### Main Apps ###
 # Prompt for Computer Name
-/usr/local/jamf/bin/jamf policy -trigger provision_nameprompt
+/usr/local/jamf/bin/jamf policy -trigger provision_nameprompt; sleep 5
   /bin/echo "Set name to $HOSTNAME" >> $log
 
 # Prompt for Asset Tag // Using script instead of Call. Test to reduce recons.
