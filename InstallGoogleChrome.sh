@@ -5,16 +5,16 @@
 # Only removes and replaces data from the /Applications Folder. Logged in User and bookmark information not impacted.
 # Mostly taken from the UninstallGoolgeChrome.sh and UpdateGoogleChrome.sh
 ################
-app="Google Chrome"
 dmgName="googlechrome.dmg"
 volumeName="Google Chrome"
 downloadURL="https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg"
 
 appName="Google Chrome.app"
-appInstalled=$(ls /Applications/ | grep -i "${appName}")
+# appInstalled=$(ls /Applications/ | grep -i "${appName}")
+appInstalled=$(echo /Applications/"${appName}")
 
 # Chrome file location array
-chromeFiles=("/Applications/Google\ Chrome.app" "~/Library/Application\ Support/Google/Chrome")
+# chromeFiles=("/Applications/Google\ Chrome.app" "$HOME/Library/Application\ Support/Google/Chrome")
 
 # Function Start - Reinstall
 function reinstallChrome {
@@ -31,7 +31,8 @@ function reinstallChrome {
 		cp -r /Volumes/"${volumeName}"/"${appName}" /Applications/Google\ Chrome.app
 		sleep 10
 	echo "Install Complete. Unmounting DMG..."
-		hdiutil unmount $(/bin/df | /usr/bin/grep "${volname}" | awk '{print $1}') -quiet
+									# Didn't double quote. Acutally want word splitting when hdiutil it looking for arguments.
+		hdiutil unmount $(/bin/df | /usr/bin/grep "${volumeName}" | awk '{print $1}') -quiet
 		sleep 5
 	echo "Deleting DMG File..."
 		rm /tmp/$dmgName
@@ -39,7 +40,7 @@ function reinstallChrome {
 }
 
 # Script Body Start
-if [ "$appInstalled" == "$appName" ]; then
+if [ "${appInstalled}" == "${appName}" ]; then
 		echo "${appName} is installed"
 		echo "Starting removing"
 		echo "Quitting Chrome"
