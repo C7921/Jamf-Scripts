@@ -27,7 +27,7 @@ fi
 # Functions
 
 function setSource() {
-  e_arrow "Enter source location:" && read -p "" varsource
+  e_arrow "Enter source location:" && read -pr "" varsource
   e_bold "You have entered:" && e_warning "$varsource"
 }
 
