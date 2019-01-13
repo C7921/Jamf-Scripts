@@ -1,10 +1,10 @@
 #!/bin/bash
 # Connor Sanders 9/8/2018
 # Downloads and installs the latest version of VLC for macOS.
-# Curent Version 3.03
+# Curent Version 3.06
 
 name="VLC"
-url="https://get.videolan.org/vlc/3.0.3/macosx/vlc-3.0.3.dmg"
+url="https://get.videolan.org/vlc/3.0.6/macosx/vlc-3.0.6.dmg"
 dmgName="vlc-3.0.3.dmg"
 volumeName="VLC media player"
 # /Volumes/VLC\ media\ player
