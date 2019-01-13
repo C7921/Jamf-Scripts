@@ -5,16 +5,16 @@
 
 name="VLC"
 url="https://get.videolan.org/vlc/3.0.6/macosx/vlc-3.0.6.dmg"
-dmgName="vlc-3.0.3.dmg"
+dmgName="vlc-3.0.6.dmg"
 volumeName="VLC media player"
 # /Volumes/VLC\ media\ player
 
 # Downloads and installs from mounted dmg volume.
 	echo "Downloading ${name}"
-	curl -s -L -o '/tmp/vlc-3.0.3.dmg' "$url"
+	curl -s -L -o '/tmp/vlc-3.0.6.dmg' "$url"
 
 	echo "Mounting DMG..."
-		hdiutil mount /tmp/vlc-3.0.3.dmg -nobrowse -quiet
+		hdiutil mount /tmp/vlc-3.0.6.dmg -nobrowse -quiet
 	echo "Installing new version"
 		sudo cp -r /Volumes/VLC\ media\ player/VLC.app /Applications/
 		sleep 10
