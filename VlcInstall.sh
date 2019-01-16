@@ -4,7 +4,7 @@
 # Curent Version 3.06
 
 name="VLC"
-url="https://get.videolan.org/vlc/3.0.6/macosx/vlc-3.0.6.dmg"
+url="http://mirror.lchost.net/videolan/vlc/3.0.6/macosx/vlc-3.0.6.dmg"
 dmgName="vlc-3.0.6.dmg"
 volumeName="VLC media player"
 # /Volumes/VLC\ media\ player
