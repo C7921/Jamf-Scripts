@@ -28,7 +28,8 @@ logged_in=$(ls -l /dev/console | awk '{print $3}')
 # nameVersion=$(/bin/echo $sourceFile | /usr/bin/sed -E 's/(.+)?Install(.+)\.app\/?/\2/' | /usr/bin/xargs | awk '{print $2}')
 InstallerVersion=$(/usr/libexec/Plistbuddy -c 'Print :"System Image Info":version' "$sourceFile/Contents/SharedSupport/InstallInfo.plist")
 
-# Final Output local. Current User Desktop.
+# Final Output local. Shared Directory. 
+# output_location="/Users/SharedShared/macOS-$InstallerVersion.pkg"
 output_location="/Users/$logged_in/Desktop/macOS-$InstallerVersion.pkg"
 ################################################################################
 ### FUNCTIONS ###
@@ -43,7 +44,8 @@ function Installer_dl() {
 # Create OSPackage
 function createPackage() {
   $ECHO "Creating Packing to $output_location"
-pkgbuild --install-location $destination_location --component "$sourceFile" "/Users/$logged_in/Desktop/${fileName}.pkg)"
+# pkgbuild --install-location $destination_location --component "$sourceFile" "/Users/Shared/macOS-${fileName}.pkg"
+pkgbuild --install-location $destination_location --component "$sourceFile" "$output_location"
 }
 
 ### Main ###
