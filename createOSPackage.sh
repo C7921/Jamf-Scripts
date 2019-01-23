@@ -4,7 +4,7 @@
 # PURPOSE: This script is designed to create an OS PKG installer.
 # NOTES: Startosinstall binary appears to require a logged in user.
 # Policy to be run by IT staff through Self Service. Will then output file to desktop.
-
+# This could easily be modified to place the PKG in /Users/Shared.
 ####################### VARIABLES ##############################################
 # Jamf Var
 JAMF="/usr/local/jamf/bin/jamf"
