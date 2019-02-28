@@ -43,9 +43,10 @@ function createPackage() {
 InstallerVersion=$(/usr/libexec/Plistbuddy -c 'Print :"System Image Info":version' "$sourceFile/Contents/SharedSupport/InstallInfo.plist")
 
 
-# Final Output local. Shared Directory. 
+# Final Output local. Shared Directory.
 # output_location="/Users/SharedShared/macOS-$InstallerVersion.pkg"
 output_location="/Users/$logged_in/Desktop/macOS-$InstallerVersion.pkg"
+# output_location="/Users/Shared/macOS-$InstallerVersion.pkg"
 
 
 $ECHO "Creating Packing to $output_location"
