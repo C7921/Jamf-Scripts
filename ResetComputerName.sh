@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Connor Sanders 14/2/18
 # Resets Computer Name to variable
 # Variable to be set in JSS Policy, ensure that variable is set. Option for hardcoding.
